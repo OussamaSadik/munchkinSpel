@@ -25,7 +25,7 @@ public class playerNameException extends Exception {
 
 
     public playerNameException() {
-        super("Lengte van de naam moet minstens 6 en maximaal 12 tekens lang zijn ! en mag enkel volgende symbolen bevatten: - en _ ");
+        super("Lengte van de naam moet minstens 6 en maximaal 12 tekens lang zijn ! en mag enkel letters en volgende symbolen bevatten: - en _ ");
 
     }
 

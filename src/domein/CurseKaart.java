@@ -12,9 +12,25 @@ import javafx.scene.image.Image;
  * @author nikol
  */
 public class CurseKaart extends KerkerKaart{
-    
-    public CurseKaart(String naam, Image afbeelding, int runAwayExtra) {
-        super(naam, afbeelding, runAwayExtra);
+    private String lose;
+
+    public String getLose() {
+        return lose;
     }
-    
+
+    public void setLose(String lose) {
+        this.lose = lose;
+    }
+
+    public CurseKaart(String lose, String naam) {
+        super(naam);
+        setLose(lose);
+    }
+
+    @Override
+    public String toString() {
+        return "CurseKaart" +
+                " naam = " + super.getNaam() +
+                " lose = " + lose + '\n';
+    }
 }

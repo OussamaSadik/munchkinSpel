@@ -13,29 +13,42 @@ import javafx.scene.image.Image;
  */
 public class Kaart {
 
-    private final String naam;
-    private final Image afbeelding;
-    private final int runAwayExtra;
+    private String naam;
+    private Image afbeelding;
+    private int runAwayExtra;
 
+    public Kaart(String naam, int runAwayExtra){
+        setNaam(naam);
+        setRunAwayExtra(runAwayExtra);
+
+
+    }
+    public Kaart(String naam){
+        this.naam = naam;
+    }
+    public Kaart() {
+    }
+
+    public void setNaam(String naam){
+        this.naam = naam;
+    }
+
+    public void setRunAwayExtra(int runAwayExtra){
+        this.runAwayExtra = runAwayExtra;
+    }
     public String getNaam() {
         return naam;
     }
 
-    public Image getAfbeelding() {
-        return afbeelding;
+    public Image getAfbeelding(){
+    return afbeelding;
     }
 
     public int getRunAwayExtra() {
+
         return runAwayExtra;
     }
 
-    public Kaart(String naam, Image afbeelding, int runAwayExtra) {
-        this.naam = naam;
-        this.afbeelding = afbeelding;
-        this.runAwayExtra = runAwayExtra;
-    }
-    
-    public void maakKaartenAan(){
-        
-    }
+
+
 }

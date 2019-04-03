@@ -9,8 +9,13 @@ import persistentie.SpelerMapper;
 public class SpelerRepository {
 
     private List<Speler> spelers;
-    private Speler[] players; 
     private  SpelerMapper mapper;
+
+    public SpelerRepository() {
+        mapper = new SpelerMapper();
+        haalSpelersOp();
+
+    }
 
     public final void haalSpelersOp() {
             this.spelers = this.mapper.toonOverzichtSpelers();
@@ -18,9 +23,11 @@ public class SpelerRepository {
             
     }
 
-    
+    public List<Speler> getSpelers() {
+        return spelers;
+    }
+
     public void voegSpelerToe(Speler speler) throws spelerBestaatException {
-    //    this.mapper.voegSpelerToe(speler);
         for (int i = 0; i < spelers.size(); i++) {
            if(spelers.get(i).getNaam().toLowerCase().equals(speler.getNaam().toLowerCase())){
                throw new spelerBestaatException();
@@ -31,15 +38,9 @@ public class SpelerRepository {
 
     }
 
-    public void toonOverzichtSpelers() {
-        for (int i = 0; i < spelers.size(); i++) {
-            System.out.println(spelers.get(i));
-        }
+    public List<Speler> toonOverzichtSpelers() {
+       return spelers;
     }
 
-    public SpelerRepository() {
-        this.mapper = new SpelerMapper();
-        haalSpelersOp();
 
-    }
 }

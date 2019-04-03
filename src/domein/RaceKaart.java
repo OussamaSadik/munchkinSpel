@@ -14,8 +14,8 @@ import javafx.scene.image.Image;
 public class RaceKaart extends KerkerKaart {
 
     private String race;
-    private boolean extraWapen;
-    private int verkoopPrijsVerdubbeld;
+    private String voordeel;
+
 
     public String getRace() {
         return race;
@@ -25,28 +25,26 @@ public class RaceKaart extends KerkerKaart {
         this.race = race;
     }
 
-    public boolean isExtraWapen() {
-        return extraWapen;
+    public String getVoordeel() {
+        return voordeel;
     }
 
-    public final void setExtraWapen(boolean extraWapen) {
-        this.extraWapen = extraWapen;
+    public void setVoordeel(String voordeel) {
+        this.voordeel = voordeel;
     }
 
-    public int getVerkoopPrijsVerdubbeld() {
-        return verkoopPrijsVerdubbeld;
-    }
-
-    public final void setVerkoopPrijsVerdubbeld(int verkoopPrijsVerdubbeld) {
-        this.verkoopPrijsVerdubbeld = verkoopPrijsVerdubbeld;
-    }
-
-    public RaceKaart(String naam, Image afbeelding, int runAwayExtra, String race, boolean extraWapen, int verkoopPrijsVerdubbeld) {
-
-        super(naam, afbeelding, runAwayExtra);
+    public RaceKaart(String naam, int runAwayExtra, String race, String voordeel) {
+        super(naam, runAwayExtra);
         setRace(race);
-        setExtraWapen(extraWapen);
-        setVerkoopPrijsVerdubbeld(verkoopPrijsVerdubbeld);
+        setVoordeel(voordeel);
     }
 
+    @Override
+    public String toString() {
+        return "RaceKaart" +
+                " naam = " + super.getNaam() +
+                " race =  " + race  +
+                " voordeel = " + voordeel + '\n'
+                ;
+    }
 }

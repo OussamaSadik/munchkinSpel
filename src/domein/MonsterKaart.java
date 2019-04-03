@@ -13,68 +13,104 @@ import javafx.scene.image.Image;
  */
 public class MonsterKaart extends KerkerKaart {
     
-    private final int level;
-    private final String badStuff;
-    private final int beloningInSchat;
-    private final int beloningInLevel;
-    private final boolean runAwayMogelijk;
-    private final int extraLevel;
-    private final String voorwaardeExtraLevel;
-    private final boolean runAwayVanafBepaaldeLevel;
-    private final int runAwayVanafBepaaldeLevelInt;
-    private final int verlorenLevelsBijRunAway;
+    private  int level;
+    private  String badStuff;
+    private  int treasuresRewards;
+    private  int levelsRewards;
+    private  int extraLevel;
+    private  String extraLevelVW;
+    private  int runAwayVanafLevel;
+    private  int verlorenLevelsBijRunAway;
 
     public int getLevel() {
         return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     public String getBadStuff() {
         return badStuff;
     }
 
-    public int getBeloningInSchat() {
-        return beloningInSchat;
+    public void setBadStuff(String badStuff) {
+        this.badStuff = badStuff;
     }
 
-    public int getBeloningInLevel() {
-        return beloningInLevel;
+    public int getTreasuresRewards() {
+        return treasuresRewards;
     }
 
-    public boolean isRunAwayMogelijk() {
-        return runAwayMogelijk;
+    public void setTreasuresRewards(int treasuresRewards) {
+        this.treasuresRewards = treasuresRewards;
+    }
+
+    public int getLevelsRewards() {
+        return levelsRewards;
+    }
+
+    public void setLevelsRewards(int levelsRewards) {
+        this.levelsRewards = levelsRewards;
     }
 
     public int getExtraLevel() {
         return extraLevel;
     }
 
-    public String getVoorwaardeExtraLevel() {
-        return voorwaardeExtraLevel;
+    public void setExtraLevel(int extraLevel) {
+        this.extraLevel = extraLevel;
     }
 
-    public boolean isRunAwayVanafBepaaldeLevel() {
-        return runAwayVanafBepaaldeLevel;
+    public String getExtraLevelVW() {
+        return extraLevelVW;
     }
 
-    public int getRunAwayVanafBepaaldeLevelInt() {
-        return runAwayVanafBepaaldeLevelInt;
+    public void setExtraLevelVW(String extraLevelVW) {
+        this.extraLevelVW = extraLevelVW;
+    }
+
+    public int getRunAwayVanafLevel() {
+        return runAwayVanafLevel;
+    }
+
+    public void setRunAwayVanafLevel(int runAwayVanafLevel) {
+        this.runAwayVanafLevel = runAwayVanafLevel;
     }
 
     public int getVerlorenLevelsBijRunAway() {
         return verlorenLevelsBijRunAway;
     }
 
-    public MonsterKaart(int level, String badStuff, int beloningInSchat, int beloningInLevel, boolean runAwayMogelijk, int extraLevel, String voorwaardeExtraLevel, boolean runAwayVanafBepaaldeLevel, int runAwayVanafBepaaldeLevelInt, int verlorenLevelsBijRunAway, String naam, Image afbeelding, int runAwayExtra) {
-        super(naam, afbeelding, runAwayExtra);
-        this.level = level;
-        this.badStuff = badStuff;
-        this.beloningInSchat = beloningInSchat;
-        this.beloningInLevel = beloningInLevel;
-        this.runAwayMogelijk = runAwayMogelijk;
-        this.extraLevel = extraLevel;
-        this.voorwaardeExtraLevel = voorwaardeExtraLevel;
-        this.runAwayVanafBepaaldeLevel = runAwayVanafBepaaldeLevel;
-        this.runAwayVanafBepaaldeLevelInt = runAwayVanafBepaaldeLevelInt;
+    public void setVerlorenLevelsBijRunAway(int verlorenLevelsBijRunAway) {
         this.verlorenLevelsBijRunAway = verlorenLevelsBijRunAway;
+    }
+
+    public MonsterKaart(String naam, int runAwayExtra, String badStuff, int extraLevel, String extraLevelVW, int level, int levelsRewards, int runAwayVanafLevel, int treasuresRewards, int verlorenLevelsBijRunAway) {
+        super(naam, runAwayExtra);
+        setBadStuff(badStuff);
+        setExtraLevel(extraLevel);
+        setExtraLevelVW(extraLevelVW);
+        setLevel(level);
+        setLevelsRewards(levelsRewards);
+        setRunAwayVanafLevel(runAwayVanafLevel);
+        setTreasuresRewards(treasuresRewards);
+        setVerlorenLevelsBijRunAway(verlorenLevelsBijRunAway);
+
+    }
+
+    @Override
+    public String toString() {
+        return "MonsterKaart" +
+                " naam = " + super.getNaam() +
+                " level = " + level +
+                " badStuff = " + badStuff + '\'' +
+                " treasuresRewards = " + treasuresRewards +
+                " levelsRewards = " + levelsRewards +
+                " extraLevel = " + extraLevel +
+                " extraLevelVW =" + extraLevelVW + '\'' +
+                " runAwayVanafLevel = " + runAwayVanafLevel +
+                " verlorenLevelsBijRunAway=" + verlorenLevelsBijRunAway  + "\n"
+                ;
     }
 }
